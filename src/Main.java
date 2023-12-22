@@ -1,4 +1,4 @@
-import action.Shape;
+import action.shape;
 import action.Point;
 
 import java.io.File;
@@ -14,8 +14,10 @@ public class Main {
         while (sc.hasNext()){
             double x = sc.nextDouble();
             double y = sc.nextDouble();
+
             Point point = new Point(x, y);
-            shape.addPoint(point);
+            Shape.addPoint(point);
         }
+        shape.toString();
     }
 }
