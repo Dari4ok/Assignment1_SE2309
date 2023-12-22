@@ -8,7 +8,7 @@ public class Shape {
     private ArrayList<Point> points;
 
     public Shape(){
-        points = new ArrayList<Point>;
+        points = new ArrayList<>;
     }
     public void addPoint(Point point){
         points.add(point);
