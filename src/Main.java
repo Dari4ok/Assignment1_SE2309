@@ -1,4 +1,4 @@
-import action.shape;
+import action.Shape;
 import action.Point;
 
 import java.io.File;
@@ -8,16 +8,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("Q:\\oop_java\\Assignment1se2309\\src\\source");
+        File file = new File("src/source");
         Scanner sc = new Scanner(file);
         int i = 0;
+
+        Shape shape = new Shape();
+
         while (sc.hasNext()){
             double x = sc.nextDouble();
             double y = sc.nextDouble();
 
             Point point = new Point(x, y);
-            Shape.addPoint(point);
+            shape.addPoint(point);
         }
-        shape.toString();
+
+        System.out.println(shape);
     }
 }

@@ -1,5 +1,6 @@
 package action;
 
+
 import java.util.ArrayList;
 
 public class Shape {
@@ -7,7 +8,7 @@ public class Shape {
     private ArrayList<Point> points;
 
     public Shape(){
-        points = new Arraylist<>();
+        points = new ArrayList<Point>;
     }
     public void addPoint(Point point){
         points.add(point);
