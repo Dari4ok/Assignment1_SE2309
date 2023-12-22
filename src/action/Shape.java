@@ -1,23 +1,23 @@
 package action;
 
-
 import java.util.ArrayList;
 
 public class Shape {
 
-    private ArrayList<Point> points;
+    private final ArrayList<Point> points;
 
-    public Shape(){
-        points = new ArrayList<>;
+    public Shape() {
+        points = new ArrayList<>();
     }
-    public void addPoint(Point point){
+
+    public void addPoint(Point point) {
         points.add(point);
     }
 
-    public double calculatePerimeter(){
-        double  perimeter = 0;
+    public double calculatePerimeter() {
+        double perimeter = 0;
         for (int i = 0; i < points.size() - 1; i++) {
-            perimeter += points.get(i).getDistance(points.get(i+1));
+            perimeter += points.get(i).getDistance(points.get(i + 1));
         }
 
         perimeter += points.get(points.size() - 1).getDistance(points.get(0));
@@ -25,14 +25,14 @@ public class Shape {
         return perimeter;
     }
 
-    public double getLongestSide(){
+    public double getLongestSide() {
         double longSide = 0;
 
         for (int i = 0; i < points.size() - 1; i++) {
-            int nextIndex = (i+1) % points.size();
+            int nextIndex = (i + 1) % points.size();
             double sideLength = points.get(i).getDistance(points.get(nextIndex));
 
-            if (sideLength > longSide){
+            if (sideLength > longSide) {
                 longSide = sideLength;
             }
         }
@@ -40,16 +40,16 @@ public class Shape {
         return longSide;
     }
 
-    public double getAverageSide(){
+    public double getAverageSide() {
         double cnt = 0;
 
         for (int i = 0; i < points.size() - 1; i++) {
-            cnt += points.get(i).getDistance(points.get(i+1));
+            cnt += points.get(i).getDistance(points.get(i + 1));
         }
 
         cnt += points.get(points.size() - 1).getDistance(points.get(0));
 
-        return cnt/ points.size();
+        return cnt / points.size();
     }
 
     @Override
@@ -57,6 +57,5 @@ public class Shape {
         return "Perimeter: " + calculatePerimeter() + "\n" + "Longest side: " + getLongestSide() + "\n" +
                 "Average side: " + getAverageSide();
     }
-}
 
 }
